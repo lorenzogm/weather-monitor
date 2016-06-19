@@ -1,0 +1,22 @@
+// Colors
+$primaryColor: rgb(147, 5, 45);
+$accentColor: grey;
+// Global
+html,
+body {}
+
+md-dialog {
+  opacity: 1 !important;
+}
+
+div[ui-view] > * {
+  width: 100%;
+}
+
+*[ui-sref],
+*[ng-click] {
+  cursor: pointer;
+  * {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,81 @@
+<md-content layout="column" layout-padding>
+  <div layout="row" layout-align="space-between">
+    <h1>Meteo Monitor</h1>
+    <md-input-container>
+      <label>Horizon</label>
+      <md-select ng-model="vm.horizon" ng-change="vm.updateCharts()">
+        <md-option ng-repeat="horizon in vm.horizons" value="{{ horizon.key }}">{{ horizon.label }}</md-option>
+      </md-select>
+    </md-input-container>
+  </div>
+  <div layout="row">
+    <md-card flex="33">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">Temperatura</span>
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-content>
+        <span us-spinner="{ position: 'relative' }" spinner-key="spinner-temperatures" spinner-start-active="true"></span>
+        <nvd3 id="chart-temperature" options="vm.charts.temperature.options" data="vm.charts.temperature.data" api="vm.temperatureApi"></nvd3>
+      </md-card-content>
+    </md-card>
+    <md-card flex="33">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">Humedad</span>
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-content>
+        <span us-spinner="{ position: 'relative' }" spinner-key="spinner-humidities" spinner-start-active="true"></span>
+        <nvd3 id="chart-humidity" options="vm.charts.humidity.options" data="vm.charts.humidity.data" api="vm.humidityApi"></nvd3>
+      </md-card-content>
+    </md-card>
+    <md-card flex="33">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">Presión barométrica</span>
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-content>
+        <span us-spinner="{ position: 'relative' }" spinner-key="spinner-pressures" spinner-start-active="true"></span>
+        <nvd3 id="chart-pressure" options="vm.charts.pressure.options" data="vm.charts.pressure.data" api="vm.pressureApi"></nvd3>
+      </md-card-content>
+    </md-card>
+  </div>
+  <div layout="row">
+    <md-card flex="33">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">Luz visible</span>
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-content>
+        <span us-spinner="{ position: 'relative' }" spinner-key="spinner-visibleLight" spinner-start-active="true"></span>
+        <nvd3 id="chart-visibleLight" options="vm.charts.visibleLight.options" data="vm.charts.visibleLight.data" api="vm.visibleLightApi"></nvd3>
+      </md-card-content>
+    </md-card>
+    <md-card flex="33">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">Luz IR</span>
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-content>
+        <span us-spinner="{ position: 'relative' }" spinner-key="spinner-iRLight" spinner-start-active="true"></span>
+        <nvd3 id="chart-iRLight" options="vm.charts.iRLight.options" data="vm.charts.iRLight.data" api="vm.iRLightApi"></nvd3>
+      </md-card-content>
+    </md-card>
+    <md-card flex="33">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">Luz ultravioleta</span>
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-content>
+        <span us-spinner="{ position: 'relative' }" spinner-key="spinner-uVIndex" spinner-start-active="true"></span>
+        <nvd3 id="chart-uVIndex" options="vm.charts.uVIndex.options" data="vm.charts.uVIndex.data" api="vm.uVIndexApi"></nvd3>
+      </md-card-content>
+    </md-card>
+  </div>
+</md-content>

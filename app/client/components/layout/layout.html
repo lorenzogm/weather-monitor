@@ -1,0 +1,10 @@
+<md-toolbar md-scroll-shrink layout="row" layout-align="start center" layout-padding ng-if="currentUser">
+  <a ui-sref="home" ui-sref-active="active">
+    <md-icon md-font-set="material-icons">home</md-icon>
+  </a>
+  <!-- <md-button ui-sref="analysis" ui-sref-active="active">Analysis</md-button> -->
+  <span flex></span>
+  <div>Welcome {{ currentUser | displayName }}</div>
+  <md-button ng-click="vm.logout()">Logout</md-button>
+</md-toolbar>
+<div ui-view flex-gt-sm layout-gt-sm="row"></div>
