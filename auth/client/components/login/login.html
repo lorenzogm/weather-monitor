@@ -1,0 +1,30 @@
+<md-content id="login" layout="row" layout-align="center center" layout-margin layout-fill>
+  <div layout="column" flex="30">
+    <div layout="column" layout-align="center center">
+      <h1>Meteo Monitor</h1>
+    </div>
+    <md-card layout="column">
+      <md-toolbar layout-align="center center">
+        <h2>Log In</h2>
+      </md-toolbar>
+      <md-toolbar ng-show="login.error" class="md-warn" layout="row" layout-fill layout-padding layout-margin>
+        <p class="md-body-1">{{ login.error }}</p>
+      </md-toolbar>
+      <form name="loginForm" layout="column" layout-margin layout-padding>
+        <md-input-container>
+          <label>User</label>
+          <input type="text" ng-model="login.credentials.email" ng-enter="login.login()" aria-label="email" required/>
+        </md-input-container>
+        <md-input-container>
+          <label>Password</label>
+          <input type="password" ng-model="login.credentials.password" ng-enter="login.login()" aria-label="password" required/>
+        </md-input-container>
+        <div layout="row" layout-align="center center">
+          <md-button class="md-raised md-primary" ng-click="login.login()" aria-label="login" ng-disabled="login.loginForm.$invalid()">
+            Log In
+          </md-button>
+        </div>
+      </form>
+    </md-card>
+  </div>
+</md-content>
