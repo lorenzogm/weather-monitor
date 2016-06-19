@@ -1,0 +1,13 @@
+{
+  "name": "WeatherMonitor",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "angular": "^1.5.3",
+    "moment": "^2.13.0",
+    "spin.js": "^2.3.2",
+    "xlsx": "0.8.0"
+  }
+}
